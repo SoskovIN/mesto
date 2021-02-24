@@ -11,6 +11,6 @@
 
 @media (max-width: 770px) and (min-width: 425px)  {
   .header {
-    max-width: calc(100% - 2*19px) ;
+    max-width: calc(100% - 2*19px);
   }
 }
