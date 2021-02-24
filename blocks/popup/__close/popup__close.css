@@ -5,7 +5,6 @@
   padding: 0;
   width: 40px;
   height: 40px;
-  background: url(../../../../images/popup-close.svg) no-repeat center;
   transform: rotate(-45deg);
   border: none;
   cursor: pointer;
@@ -15,4 +14,13 @@
 
 .popup__close:hover {
   opacity: 0.6;
+}
+
+@media (max-width: 626px) {
+  .popup__close {
+    top: -45px;
+    right: 5px;
+    width: 26px;
+    height: 26px
+  }
 }
