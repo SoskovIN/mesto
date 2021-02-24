@@ -1,0 +1,14 @@
+.header__logo-link {
+  display: inline-block;
+  transition: opacity 0.8s;
+}
+
+.header__logo-link:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 767px) {
+  .header__logo-link {
+    margin-left: 27px;
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pages/index.css">
+  <title>Mesto</title>
+</head>
+<body>
+  <div class="page">
+
+    <section class="header">
+      <a target="_self" href="#" class="header__logo-link">
+        <img src="./images/header-logo.svg" alt="Логотип: Место" class="header__logo">
+      </a>
+      <div class="header__line"></div>
+    </section>
+
+    <main class="content">
+
+      <section class="profile">
+        <img src="./images/profile-avatar.png" alt="Аватар Жак Кусто" class="profile__avatar">
+        <div class="profile__info">
+          <h1 class="profile__full-name">Жак-Ив Кусто</h1>
+          <button type="button" class="profile__edit-button profile__hover-button"></button>
+          <p class="profile__profession">Исследователь океана</p>
+        </div>
+        <button type="button" class="profile__add-button profile__hover-button">
+        </button>
+      </section>
+
+      <section class="elements">
+        <div class="elements__element">
+          <img src="./images/elements-karachevsk.jpg" alt="заброшенная часовня Карачевска" class="elements__image">
+          <h2 class="elements__title">Карачаевск</h2>
+          <a href="#" class="elements__like"></a>
+        </div>
+        <div class="elements__element">
+          <img src="./images/elements-elbrus.jpg" alt="гора Эльбрус" class="elements__image">
+          <h2 class="elements__title">Гора Эльбрус</h2>
+          <a href="#" class="elements__like"></a>
+        </div>
+        <div class="elements__element">
+          <img src="./images/elements-dombai.jpg" alt="горs Донбая" class="elements__image">
+          <h2 class="elements__title">Домбай</h2>
+          <a href="#" class="elements__like"></a>
+        </div>
+
+        <div class="elements__element">
+          <img src="./images/elements-elbrus.jpg" alt="гора Эльбрус" class="elements__image">
+          <h2 class="elements__title">Гора Эльбрус</h2>
+          <a href="#" class="elements__like"></a>
+        </div>
+        <div class="elements__element">
+          <img src="./images/elements-dombai.jpg" alt="горs Донбая" class="elements__image">
+          <h2 class="elements__title">Домбай</h2>
+          <a href="#" class="elements__like"></a>
+        </div>
+        <div class="elements__element">
+          <img src="./images/elements-karachevsk.jpg" alt="заброшенная часовня Карачевска" class="elements__image">
+          <h2 class="elements__title">Карачаево-Черкессия</h2>
+          <a href="#" class="elements__like"></a>
+        </div>
+      </section>
+    </main>
+
+    <section class="footer">
+      <p translate="no" class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </section>
+
+    <div class="popup">
+      <div class="popup__content">
+        <a href="#" class="popup__close"></a>
+
+        <form type="submit" class="formElement" action="">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input name="fullname" type="text" value="Жак-Ив Кусто" class="popup__input popup__name">
+          <input name="about" type="text" value="Исследователь океана" class="popup__input popup__job">
+          <input type="submit" value="Сохранить" class="popup__button-save">
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="index.js"></script>
+  </body>
+</html>

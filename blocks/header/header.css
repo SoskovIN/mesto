@@ -1,0 +1,16 @@
+.header {
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+@media (max-width: 918px) {
+  .header {
+    max-width: 730px;
+  }
+}
+
+@media (max-width: 770px) and (min-width: 425px)  {
+  .header {
+    max-width: calc(100% - 2*19px) ;
+  }
+}

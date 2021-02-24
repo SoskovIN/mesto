@@ -1,0 +1,13 @@
+.header__line {
+  margin-top: 41px;
+  margin-bottom: 40px;
+  background-color: #545454;
+  height: 1px;
+}
+
+@media (max-width: 424px) {
+  .header__line {
+    margin-top: 31.6px;
+    margin-bottom: 42px;
+  }
+}
