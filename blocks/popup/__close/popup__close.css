@@ -5,11 +5,12 @@
   padding: 0;
   width: 40px;
   height: 40px;
-  background: url(../../../images/popup-close.svg) no-repeat ;
+  background: url(../../../../images/popup-close.svg) no-repeat center;
   transform: rotate(-45deg);
   border: none;
   cursor: pointer;
   transition: opacity 0.8s;
+  z-index: 3;
 }
 
 .popup__close:hover {
