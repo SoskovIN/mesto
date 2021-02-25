@@ -1,6 +1,7 @@
 .profile {
   align-items: center;
   display: flex;
+  padding-top: 40px;
   color: white;
 }
 
@@ -8,5 +9,11 @@
   .profile {
     flex-direction: column;
     justify-items: center;
+  }
+}
+
+@media (max-width: 424px) {
+  .profile {
+    padding-top: 42px;
   }
 }

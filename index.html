@@ -9,12 +9,11 @@
 <body>
   <div class="page">
 
-    <section class="header">
+    <header class="header">
       <a target="_self" href="#" class="header__logo-link">
-        <img src="./images/header-logo.svg" alt="Логотип: Место" class="header__logo">
+        <img src="./images/header-logo.svg" alt="Фотография пользователя" class="header__logo">
       </a>
-      <div class="header__line"></div>
-    </section>
+    </header>
 
     <main class="content">
 
@@ -22,65 +21,63 @@
         <img src="./images/profile-avatar.png" alt="Аватар Жак Кусто" class="profile__avatar">
         <div class="profile__info">
           <h1 class="profile__full-name">Жак-Ив Кусто</h1>
-          <button type="button" class="profile__edit-button profile__hover-button"></button>
+          <button type="button" aria-label="Редактировать профиль" class="profile__edit-button profile__hover-button"></button>
           <p class="profile__profession">Исследователь океана</p>
         </div>
-        <button type="button" class="profile__add-button profile__hover-button">
+        <button type="button" aria-label="Добавить изображение" class="profile__add-button profile__hover-button">
         </button>
       </section>
 
       <section class="elements">
-        <div class="elements__element">
-          <img src="./images/elements-karachevsk.jpg" alt="заброшенная часовня Карачевска" class="elements__image">
-          <h2 class="elements__title">Карачаевск</h2>
-          <a target="_self" href="#" class="elements__like"></a>
-        </div>
-        <div class="elements__element">
-          <img src="./images/elements-elbrus.jpg" alt="гора Эльбрус" class="elements__image">
-          <h2 class="elements__title">Гора Эльбрус</h2>
-          <a target="_self" href="#" class="elements__like"></a>
-        </div>
-        <div class="elements__element">
-          <img src="./images/elements-dombai.jpg" alt="горs Донбая" class="elements__image">
-          <h2 class="elements__title">Домбай</h2>
-          <a target="_self" href="#" class="elements__like"></a>
-        </div>
+        <article class="element">
+          <img src="./images/elements-karachevsk.jpg" alt="заброшенная часовня Карачевска" class="element__image">
+          <h2 class="element__title">Карачаевск</h2>
+          <button type="button" aria-label="Лайк" class="element__like"></button>
+        </article>
+        <article class="element">
+          <img src="./images/elements-elbrus.jpg" alt="гора Эльбрус" class="element__image">
+          <h2 class="element__title">Гора Эльбрус</h2>
+          <button type="button" aria-label="Лайк" class="element__like"></button>
+        </article>
+        <article class="element">
+          <img src="./images/elements-dombai.jpg" alt="горs Донбая" class="element__image">
+          <h2 class="element__title">Домбай</h2>
+          <button type="button" aria-label="Лайк" class="element__like"></button>
+        </article>
 
-        <div class="elements__element">
-          <img src="./images/elements-elbrus.jpg" alt="гора Эльбрус" class="elements__image">
-          <h2 class="elements__title">Гора Эльбрус</h2>
-          <a target="_self" href="#" class="elements__like"></a>
-        </div>
-        <div class="elements__element">
-          <img src="./images/elements-dombai.jpg" alt="горs Донбая" class="elements__image">
-          <h2 class="elements__title">Домбай</h2>
-          <a target="_self" href="#" class="elements__like"></a>
-        </div>
-        <div class="elements__element">
-          <img src="./images/elements-karachevsk.jpg" alt="заброшенная часовня Карачевска" class="elements__image">
-          <h2 class="elements__title">Карачаево-Черкессия</h2>
-          <a target="_self" href="#" class="elements__like"></a>
-        </div>
+        <article class="element">
+          <img src="./images/elements-elbrus.jpg" alt="гора Эльбрус" class="element__image">
+          <h2 class="element__title">Гора Эльбрус</h2>
+          <button type="button" aria-label="Лайк" class="element__like"></button>
+        </article>
+        <article class="element">
+          <img src="./images/elements-dombai.jpg" alt="горs Донбая" class="element__image">
+          <h2 class="element__title">Домбай</h2>
+          <button type="button" aria-label="Лайк" class="element__like"></button>
+        </article>
+        <article class="element">
+          <img src="./images/elements-karachevsk.jpg" alt="заброшенная часовня Карачевска" class="element__image">
+          <h2 class="element__title">Карачаево-Черкессия</h2>
+          <button type="button" aria-label="Лайк" class="element__like"></button>
+        </article>
       </section>
     </main>
 
-    <section class="footer">
+    <footer class="footer">
       <p translate="no" class="footer__copyright">&copy; 2020 Mesto Russia</p>
-    </section>
+    </footer>
 
     <div class="popup">
-      <div class="popup__content">
-        <a target="_self" href="#" class="popup__close">
-          <img class="popup__close-vector" src="./images/popup-close.svg" alt="Кнопка закрытия модального окна">
-        </a>
-
-        <form class="formElement">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <input name="fullname" type="text" value="Жак-Ив Кусто" class="popup__input popup__name">
-          <input name="about" type="text" value="Исследователь океана" class="popup__input popup__job">
-          <input type="submit" value="Сохранить" class="popup__button-save">
+      <div  class="popup__content">
+        <button type="button" aria-label="Закрыть модальное окно" class="popup__close">
+          <!-- <img class="popup__close-vector" src="./images/popup-close.svg" alt="Кнопка закрытия модального окна"> -->
+        </button>
+        <form name="user-data" class="form-edit">
+          <h2 class="form-edit__title">Редактировать профиль</h2>
+          <input name="fullname" type="text" value=" " class="form-edit__input form-edit__input_type_name">
+          <input name="about" type="text" value=" " class="form-edit__input form-edit__input_type_job">
+          <button type="submit" aria-label="Сохранить данные пользователя" class="form-edit__button-save">Сохранить</button>
         </form>
-
       </div>
     </div>
 

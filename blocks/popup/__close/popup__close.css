@@ -9,7 +9,8 @@
   border: none;
   cursor: pointer;
   transition: opacity 0.8s;
-  z-index: 3;
+  background: transparent;
+  background: url(../../../../images/popup-close.svg) no-repeat center;
 }
 
 .popup__close:hover {
