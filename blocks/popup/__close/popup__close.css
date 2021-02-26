@@ -9,7 +9,6 @@
   border: none;
   cursor: pointer;
   transition: opacity 0.8s;
-  background: transparent;
   background: url(../../../../images/popup-close.svg) no-repeat center;
 }
 
@@ -23,5 +22,5 @@
     right: 5px;
     width: 26px;
     height: 26px;
-  }
+    background-image: url(../../../../images/popup-close-small.svg);
 }

@@ -18,17 +18,16 @@ let jobProfile = document.querySelector('.profile__profession');
 
 // Функция открытия попапа
 function addPopupdEdit(event) {
-  event.preventDefault();
+  // Обновление значений полей ввода из данных профиля с основной страницы
+  nameInput.value = nameProfile.textContent;
+  jobInput.value = jobProfile.textContent;
   popup.classList.add('popup_opened');
 }
 
 // Функция  закрытия попапа
 function removePopupdEdit(event) {
-  event.preventDefault();
-  // Обновление значений полей ввода из данных профиля с основной страницы
-  nameInput.value = nameProfile.textContent;
-  jobInput.value = jobProfile.textContent;
-   popup.classList.remove('popup_opened');
+  // event.preventDefault();
+  popup.classList.remove('popup_opened');
 }
 
 // Функция обработки ввода данных
