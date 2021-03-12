@@ -31,9 +31,9 @@
   // Форма редактирование данных пользователя
   const formEditElement = document.querySelector('.form-edit');
   // Поле ввода имени пользователя
-  const nameInput = document.querySelector('.form-edit__input_type_name');
+  const nameInput = document.querySelector('.form__input_type_name');
   // Поле ввода рода деятельности пользователя
-  const jobInput = document.querySelector('.form-edit__input_type_job');
+  const jobInput = document.querySelector('.form__input_type_job');
   // Имя пользователя, отображаемое на главное странице
   const nameProfile = document.querySelector('.profile__full-name');
   // Род деятельности пользователя, отображаемый на главное странице
@@ -42,9 +42,9 @@
   // Форма добавлния карточки
  const formAddElement = document.querySelector('.form-add');
   // Поле ввода названия карточки
-  const titleInput = document.querySelector('.form-add__input_type_title');
+  const titleInput = document.querySelector('.form__input_type_title');
   // Поле ввода ссылки на загружаемое изображение
-  const imageInput = document.querySelector('.form-add__input_type_link');
+  const imageInput = document.querySelector('.form__input_type_link');
 
 
 // Функция создания шаблонной карточки
@@ -136,10 +136,10 @@ function openPopupEditHandler(popupOpen) {
   jobInput.value = jobProfile.textContent;
   openPopup(popupOpen);
 }
-// Обработчик полей ввода формы Add
+// бработчик полей ввода формы Add
 function openPopupAddHandler(popupOpen) {
-  titleInput.value = 'Название';
-  imageInput.value = "Ссылка на картинку";
+  titleInput.value = "";
+  imageInput.value = "";
   openPopup(popupOpen);
 }
 // Навесить слушатель на кнопку открытия попапа Edit
