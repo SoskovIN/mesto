@@ -1,4 +1,4 @@
-.form-edit__button-save {
+.form__button-save {
   margin-top: 48px;
   padding: 0;
   width: 100%;
@@ -15,12 +15,12 @@
   transition: opacity 0.8s;
 }
 
-.form-edit__button-save:hover {
+.form__button-save:hover {
   opacity: 0.8;
 }
 
 @media (max-width: 626px) {
-  .form-edit__button-save {
+  .form__button-save {
     margin-top: 45px;
     height: 46px;
     font-size: 14px;
