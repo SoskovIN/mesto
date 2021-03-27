@@ -13,4 +13,5 @@
   bottom: 0;
   right: 0;
   transition: visibility 0.3s, opacity 0.3s linear;
+  cursor: pointer;
 }

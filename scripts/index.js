@@ -29,7 +29,7 @@
   const closePopupButtonImg = document.querySelector('.popup__close-img');
 
   // Форма редактирование данных пользователя
-  const formEditElement = document.querySelector('.form-edit');
+  const formEditElement = document.querySelector('.form');
   // Поле ввода имени пользователя
   const nameInput = document.querySelector('.form__input_type_name');
   // Поле ввода рода деятельности пользователя
@@ -106,7 +106,6 @@ function openPopupImage(evt) {
   openPopup(popupImage);
 }
 
-
 // Добавить слушатели событий для шаблонной карточки
 function addCardListeners(card) {
   const likeButton = card.querySelector('.element__like');
@@ -121,7 +120,6 @@ function addCardListeners(card) {
   });
 }
 
-
 // Функция открытия попапов
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -129,6 +127,7 @@ function openPopup(popup) {
 // Функция закрытия попапов
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+
 }
 // Обработчик полей ввода формы Edit
 function openPopupEditHandler(popupOpen) {
@@ -146,19 +145,23 @@ function openPopupAddHandler(popupOpen) {
 showPopupButtonEdit.addEventListener('click', () => {
   openPopupEditHandler(popupEdit);
 });
+
 // Навесить слушатель на кнопку закрытия попапа Edit
 closePopupButtonEdit.addEventListener('click', () => {
   closePopup(popupEdit);
 });
+
 // Навесить слушатель на кнопку открытия попапа Add
 showPopupButtonAdd.addEventListener('click', () => {
   openPopupAddHandler(popupAdd);
+  // Найти кнопку "Сохранить"
+  const buttonElement = document.querySelector(obj.submitButtonSelector);
+  buttonElement.setAttribute('disabled', true);
 });
 // Навесить слушатель на кнопку закрытия попапа Add
 closePopupButtonAdd.addEventListener('click', () => {
   closePopup(popupAdd);
 });
-
 
 // Функция обработки ввода данных в форме Edit
 function submitFormEditHandler (evt) {
@@ -183,3 +186,31 @@ function submitFormAddHandler(evt) {
 formAddElement.addEventListener('submit', submitFormAddHandler);
 
 
+// Получить массив всех попапов
+const popupList = Array.from(document.querySelectorAll('.popup'));
+// Обработать попапы в цикле
+popupList.forEach(popup => {
+  // Закрыть конкретный попап при нажатии ЛКМ на оверлей попапа
+  popup.onclick = (evt) => {
+    if(evt.target.classList.contains('popup')) {
+      closePopup(popup)
+    }
+  }
+});
+
+// Функция закрытия попапа при нажатии на кнпоку "Escape"
+function removeByEsc(popup) {
+  if (event.keyCode === 27) {
+    closePopup(popup)
+  }
+}
+
+// Функция закрытия попапа на "Escape" для popupEdit, popupAdd, popupImage
+function closePopupByEsc() {
+  removeByEsc(popupEdit)
+  removeByEsc(popupAdd)
+  removeByEsc(popupImage)
+}
+
+// Навесить слушатель на кнопку "Escape" для закрытия открытого Попапа
+document.addEventListener('keyup', (evt) => closePopupByEsc(evt));
