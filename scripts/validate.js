@@ -31,13 +31,11 @@ const showInputError = (formElement, inputElement, obj) => {
   errorPlace.textContent = inputElement.validationMessage;
 };
 
-const clearError = (popup) => {
-  const errorNo = popup.querySelector(`#${inputElement.id}-error`);
-  inputElement.classList.add(obj.inputErrorClass);
-  // Показать ошибку под полем
-  errorNo.classList.add(obj.errorClass);
-  errorNo.textContent = inputElement.validationMessage;
-}
+// const clearError = (popup) => {
+//   const inputList = Array.from(inputlement.querySelectorAll(obj.inputSelector));
+
+//   const spanList = Array.from(spanlement.querySelectorAll(obj.inputSelector));
+// }
 
 // Функция удаления действий при ошибке
 const hideInputError = (formElement, inputElement, obj) => {

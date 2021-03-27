@@ -123,11 +123,12 @@ function addCardListeners(card) {
 // Функция открытия попапов
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keyup', (evt) => closePopupByEsc(evt));
 }
 // Функция закрытия попапов
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-
+  // document.removeEventListener('keyup', (evt) => closePopupByEsc(evt));
 }
 // Обработчик полей ввода формы Edit
 function openPopupEditHandler(popupOpen) {
@@ -213,4 +214,6 @@ function closePopupByEsc() {
 }
 
 // Навесить слушатель на кнопку "Escape" для закрытия открытого Попапа
-document.addEventListener('keyup', (evt) => closePopupByEsc(evt));
+// document.addEventListener('keyup', (evt) => closePopupByEsc(evt));
+
+
