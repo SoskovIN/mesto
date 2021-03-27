@@ -121,14 +121,15 @@ function addCardListeners(card) {
 }
 
 // Функция открытия попапов
-function openPopup(popup) {
+function openPopup(popup, inputList) {
   popup.classList.add('popup_opened');
-  document.addEventListener('keyup', (evt) => closePopupByEsc(evt));
+  // Навесить слушатель на кнопку "Escape" для закрытия открытого Попапа
+  document.addEventListener('keyup', closePopupByEsc);
 }
 // Функция закрытия попапов
-function closePopup(popup) {
+function closePopup(popup, inputElement) {
   popup.classList.remove('popup_opened');
-  // document.removeEventListener('keyup', (evt) => closePopupByEsc(evt));
+  document.removeEventListener('keyup', closePopupByEsc);
 }
 // Обработчик полей ввода формы Edit
 function openPopupEditHandler(popupOpen) {
@@ -207,13 +208,10 @@ function removeByEsc(popup) {
 }
 
 // Функция закрытия попапа на "Escape" для popupEdit, popupAdd, popupImage
-function closePopupByEsc() {
+function closePopupByEsc(event) {
   removeByEsc(popupEdit)
   removeByEsc(popupAdd)
   removeByEsc(popupImage)
 }
-
-// Навесить слушатель на кнопку "Escape" для закрытия открытого Попапа
-// document.addEventListener('keyup', (evt) => closePopupByEsc(evt));
 
 

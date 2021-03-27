@@ -31,12 +31,6 @@ const showInputError = (formElement, inputElement, obj) => {
   errorPlace.textContent = inputElement.validationMessage;
 };
 
-// const clearError = (popup) => {
-//   const inputList = Array.from(inputlement.querySelectorAll(obj.inputSelector));
-
-//   const spanList = Array.from(spanlement.querySelectorAll(obj.inputSelector));
-// }
-
 // Функция удаления действий при ошибке
 const hideInputError = (formElement, inputElement, obj) => {
   // Поиск поля с текстом ошибки
@@ -49,7 +43,7 @@ const hideInputError = (formElement, inputElement, obj) => {
 };
 
 // Функция проверки состояния поля на валидность
-const checkInput = (formElement, inputElement, obj) => {                                             /// ????????????????? нужно ли это
+const checkInput = (formElement, inputElement, obj) => {
   if (inputElement.validity.valid) {
     hideInputError(formElement, inputElement, obj)
   } else {
