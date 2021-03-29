@@ -48,11 +48,7 @@ const clearError = (formElement, obj) => {
   inputList.forEach(inputElement => {
     inputElement.classList.remove(obj.inputErrorClass);
 
-    const spanList = Array.from(formElement.querySelectorAll(`#${inputElement.id}-error`))
-    spanList.forEach(spanElement => {
-      spanElement.classList.remove(obj.errorClass);
-      spanElement.textContent = "";
-    });
+
   });
 }
 
