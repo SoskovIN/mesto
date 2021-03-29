@@ -42,19 +42,19 @@ const hideInputError = (formElement, inputElement, obj) => {
   errorPlace.textContent = "";
 };
 
-// // Функция сбрасывания валидации форм, для повторногом открытия попапа с формой
-// const clearError = (formElement, obj) => {
-//   const inputList = Array.from(formElement.querySelectorAll(obj.inputSelector));
-//   inputList.forEach(inputElement => {
-//     inputElement.classList.remove(obj.inputErrorClass);
+// Функция сбрасывания валидации форм, для повторногом открытия попапа с формой
+const clearError = (formElement, obj) => {
+  const inputList = Array.from(formElement.querySelectorAll(obj.inputSelector));
+  inputList.forEach(inputElement => {
+    inputElement.classList.remove(obj.inputErrorClass);
 
-//     const spanList = Array.from(formElement.querySelectorAll(`#${inputElement.id}-error`))
-//     spanList.forEach(spanElement => {
-//       spanElement.classList.remove(obj.errorClass);
-//       spanElement.textContent = "";
-//     });
-//   });
-// }
+    const spanList = Array.from(formElement.querySelectorAll(`#${inputElement.id}-error`))
+    spanList.forEach(spanElement => {
+      spanElement.classList.remove(obj.errorClass);
+      spanElement.textContent = "";
+    });
+  });
+}
 
 // Функция проверки состояния поля на валидность
 const checkInput = (formElement, inputElement, obj) => {

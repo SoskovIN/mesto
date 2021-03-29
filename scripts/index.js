@@ -120,12 +120,12 @@ function addCardListeners(card) {
   });
 }
 
-// // Функция открытия попапов
-// function openPopup(popup) {
-//   popup.classList.add('popup_opened');
-//   // Навесить слушатель на кнопку "Escape" для закрытия открытого Попапа
-//   document.addEventListener('keyup', closePopupByEsc);
-// }
+// Функция открытия попапов
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+  // Навесить слушатель на кнопку "Escape" для закрытия открытого Попапа
+  document.addEventListener('keyup', closePopupByEsc);
+}
 // Функция закрытия попапов
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
