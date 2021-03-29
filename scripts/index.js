@@ -202,11 +202,11 @@ popupList.forEach(popup => {
 });
 
 // Задать глобальную переменную со значением клавиши Escape
-const Escape = 27;
+const buttonEscape = 27;
 // Функция закрытия попапа при нажатии на кнпоку "Escape"
 function closePopupByEsc(evt) {
   const popupOpened = document.querySelector('.popup_opened');
-    if (evt.keyCode === Escape) {
+    if (evt.keyCode === buttonEscape) {
       closePopup(popupOpened)
   }
 }
