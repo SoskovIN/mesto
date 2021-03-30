@@ -208,14 +208,13 @@ const buttonEscape = 27;
 
 // Функция закрытия всех открытых попапов при нажатии на кнпоку "Escape"
 function closePopupByEsc(evt) {
-// Найти все открытые Попапы
-      popupList.forEach(popupElement => {
-        if (evt.keyCode === buttonEscape && popupElement.classList.contains('popup_opened'))
-        {
-          closePopup(popupElement);
-        }
-    })
-  }
+  popupList.forEach(popupElement => {
+    if (evt.keyCode === buttonEscape && popupElement.classList.contains('popup_opened'))
+    {
+      closePopup(popupElement);
+    }
+})
+}
   // // В данной реализации при нажатии на кнопку "Escape" закрываются все открытые попапы на странице, даже если их будет открыто несколько.
     // Я пока что не совсем понимаю, как здесь применить метод bind. Да и изучение работы с объектами подразумевается в последующих спринтах программы обучения.
 
