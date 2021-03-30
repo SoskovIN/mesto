@@ -124,14 +124,15 @@ function addCardListeners(card) {
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   // Навесить слушатель на кнопку "Escape" для закрытия открытого Попапа
-  document.addEventListener('keyup', closePopupByEsc);
+  document.addEventListener('keydown', closePopupByEsc);
 }
 // Функция закрытия попапов
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  document.removeEventListener('keyup', closePopupByEsc);
+  document.removeEventListener('keydown', closePopupByEsc);
   clearError(popup, obj);
 }
+
 // Обработчик полей ввода формы Edit
 function openPopupEditHandler(popupOpen) {
   nameInput.value = nameProfile.textContent;
@@ -191,6 +192,7 @@ formAddElement.addEventListener('submit', submitFormAddHandler);
 
 // Получить массив всех попапов
 const popupList = Array.from(document.querySelectorAll('.popup'));
+
 // Обработать попапы в цикле
 popupList.forEach(popup => {
   // Закрыть конкретный попап при нажатии ЛКМ на оверлей попапа
@@ -203,10 +205,19 @@ popupList.forEach(popup => {
 
 // Задать глобальную переменную со значением клавиши Escape
 const buttonEscape = 27;
-// Функция закрытия попапа при нажатии на кнпоку "Escape"
+
+// Функция закрытия всех открытых попапов при нажатии на кнпоку "Escape"
 function closePopupByEsc(evt) {
-  const popupOpened = document.querySelector('.popup_opened');
-    if (evt.keyCode === buttonEscape) {
-      closePopup(popupOpened)
+// Найти все открытые Попапы
+      popupList.forEach(popupElement => {
+        if (evt.keyCode === buttonEscape && popupElement.classList.contains('popup_opened'))
+        {
+          closePopup(popupElement);
+        }
+    })
   }
-}
+  // // В данной реализации при нажатии на кнопку "Escape" закрываются все открытые попапы на странице, даже если их будет открыто несколько.
+    // Я пока что не совсем понимаю, как здесь применить метод bind. Да и изучение работы с объектами подразумевается в последующих спринтах программы обучения.
+
+
+
