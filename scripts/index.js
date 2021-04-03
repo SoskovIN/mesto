@@ -66,8 +66,6 @@ function createCardDomNode(card) {
   return newCard;
 }
 
-
-
 // Функция отображения шести карточек "из коробки"
 function renderCards() {
   const result = initialCards.map(function (card) {

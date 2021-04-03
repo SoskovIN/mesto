@@ -1,6 +1,6 @@
 .footer {
   margin: 0 auto;
-  margin-top: min(66px);
+  margin-top: 66px;
   max-width: 880px;
 }
 
@@ -21,9 +21,4 @@
     margin-top: 48px;
   }
 }
-
-.bubble {
-  height: 100%;
-}
-
 
