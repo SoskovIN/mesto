@@ -1,8 +1,9 @@
 .page {
-  margin: 0 auto;
+  flex-direction:column;
   padding-top: 45px;
   padding-bottom: 60px;
   min-width: 320px;
+  min-height: 100vh;
   font-family: 'Inter', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

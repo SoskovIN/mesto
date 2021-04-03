@@ -94,11 +94,7 @@ const enableValidation = (obj) => {
     formElement => {
       formElement.addEventListener('submit', (evt) => {
         // Отменить для формы поведение по умолчанию
-        evt.preventDefault()
-        // Отключить кнопку и сменить стиль при открытии формы добавления карточки
-        const buttonAdd = document.querySelector('#buttonAdd');
-        buttonAdd.classList.add(obj.inactiveButtonClass);
-        buttonAdd.setAttribute('disabled', true);
+        evt.preventDefault();
       });
       // Навесить слушатели для полей формы
       setInputListeners(formElement, obj);
@@ -118,6 +114,3 @@ const obj = {
 
 // Включение валидации
 enableValidation(obj);
-
-
-

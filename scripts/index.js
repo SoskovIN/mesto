@@ -1,50 +1,50 @@
 // Присвоить значение переменным:
-  // Место, куда будут добавляются карточки
-  const cardContainer = document.querySelector('.elements');
-  // Содержимое Шаблона
-  const templateCard = document.querySelector('.template').content;
-  // Новый образец Шаблона
-  const cardElement = templateCard.querySelector('.element').cloneNode(true);
+// Место, куда будут добавляются карточки
+const cardContainer = document.querySelector('.elements');
+// Содержимое Шаблона
+const templateCard = document.querySelector('.template').content;
+// Новый образец Шаблона
+const cardElement = templateCard.querySelector('.element').cloneNode(true);
 
-  // Попап
-  const popup = document.querySelector('.popup');
-  // Попап редактирвоания профиля (edit)
-  const popupEdit = document.querySelector('.popup-edit');
-  // Попап добавления карточки на страницу (add)
-  const popupAdd = document.querySelector('.popup-add');
-  // Попап для детального просмотра изображения
-  const popupImage = document.querySelector('.popup-image');
+// Попап
+const popup = document.querySelector('.popup');
+// Попап редактирвоания профиля (edit)
+const popupEdit = document.querySelector('.popup-edit');
+// Попап добавления карточки на страницу (add)
+const popupAdd = document.querySelector('.popup-add');
+// Попап для детального просмотра изображения
+const popupImage = document.querySelector('.popup-image');
 
-  // Описание изображения в попапе img (под изображением)
-  const titlePopupImage = document.querySelector('.popup__image-title');
+// Описание изображения в попапе img (под изображением)
+const titlePopupImage = document.querySelector('.popup__image-title');
 
-  // Кнопки открытия/закрытия попапа редактирования профиля (edit)
-  const showPopupButtonEdit = document.querySelector('.profile__edit-button');
-  const closePopupButtonEdit = document.querySelector('.popup__close-edit');
-  // Кнопки открытия/закрытия попапа добавления карточки (add)
-  const showPopupButtonAdd = document.querySelector('.profile__add-button');
-  const closePopupButtonAdd = document.querySelector('.popup__close-add');
-  // Кнопки открытия и закрытия попапа увеличения изображения
-  const buttonPopupImage = document.querySelector('.popup__image');
-  const closePopupButtonImg = document.querySelector('.popup__close-img');
+// Кнопки открытия/закрытия попапа редактирования профиля (edit)
+const showPopupButtonEdit = document.querySelector('.profile__edit-button');
+const closePopupButtonEdit = document.querySelector('.popup__close-edit');
+// Кнопки открытия/закрытия попапа добавления карточки (add)
+const showPopupButtonAdd = document.querySelector('.profile__add-button');
+const closePopupButtonAdd = document.querySelector('.popup__close-add');
+// Кнопки открытия и закрытия попапа увеличения изображения
+const buttonPopupImage = document.querySelector('.popup__image');
+const closePopupButtonImg = document.querySelector('.popup__close-img');
 
-  // Форма редактирование данных пользователя
-  const formEditElement = document.querySelector('.form');
-  // Поле ввода имени пользователя
-  const nameInput = document.querySelector('.form__input_type_name');
-  // Поле ввода рода деятельности пользователя
-  const jobInput = document.querySelector('.form__input_type_job');
-  // Имя пользователя, отображаемое на главное странице
-  const nameProfile = document.querySelector('.profile__full-name');
-  // Род деятельности пользователя, отображаемый на главное странице
-  const jobProfile = document.querySelector('.profile__profession');
+// Форма редактирование данных пользователя
+const formEditElement = document.querySelector('.form');
+// Поле ввода имени пользователя
+const nameInput = document.querySelector('.form__input_type_name');
+// Поле ввода рода деятельности пользователя
+const jobInput = document.querySelector('.form__input_type_job');
+// Имя пользователя, отображаемое на главное странице
+const nameProfile = document.querySelector('.profile__full-name');
+// Род деятельности пользователя, отображаемый на главное странице
+const jobProfile = document.querySelector('.profile__profession');
 
-  // Форма добавлния карточки
- const formAddElement = document.querySelector('.form-add');
-  // Поле ввода названия карточки
-  const titleInput = document.querySelector('.form__input_type_title');
-  // Поле ввода ссылки на загружаемое изображение
-  const imageInput = document.querySelector('.form__input_type_link');
+// Форма добавлния карточки
+const formAddElement = document.querySelector('.form-add');
+// Поле ввода названия карточки
+const titleInput = document.querySelector('.form__input_type_title');
+// Поле ввода ссылки на загружаемое изображение
+const imageInput = document.querySelector('.form__input_type_link');
 
 
 // Функция создания шаблонной карточки
@@ -63,16 +63,18 @@ function createCardDomNode(card) {
   // Навесить слушатель на карточку
   addCardListeners(newCard);
   // Возвратить карточку
-	return newCard;
+  return newCard;
 }
+
+
 
 // Функция отображения шести карточек "из коробки"
 function renderCards() {
-	const result = initialCards.map(function(card) {
-		const newCard = createCardDomNode(card);
-		return newCard;
-	});
-	cardContainer.append(...result);
+  const result = initialCards.map(function (card) {
+    const newCard = createCardDomNode(card);
+    return newCard;
+  });
+  cardContainer.append(...result);
 }
 
 //Отобразить на странице 6 карточек
@@ -139,28 +141,43 @@ function openPopupEditHandler(popupOpen) {
   jobInput.value = jobProfile.textContent;
   openPopup(popupOpen);
 }
-// бработчик полей ввода формы Add
+// Обработчик полей ввода формы Add
 function openPopupAddHandler(popupOpen) {
   titleInput.value = "";
   imageInput.value = "";
   openPopup(popupOpen);
 }
+
+// Функция установки Активной кнопки с сбросом стилей в попапе Edit
+const toActiveButtonEdit = () => {
+  const buttonAdd = document.querySelector('#buttonEdit');
+  buttonAdd.classList.remove(obj.inactiveButtonClass);
+  buttonAdd.removeAttribute('disabled', true);
+}
 // Навесить слушатель на кнопку открытия попапа Edit
 showPopupButtonEdit.addEventListener('click', () => {
+  // Установить значения полей ввода формы из данных профиля с помощью обработчика
   openPopupEditHandler(popupEdit);
+  // Включить кнопку "Сохранить" и сбросить стили по умолчанию
+  toActiveButtonEdit();
 });
-
 // Навесить слушатель на кнопку закрытия попапа Edit
 closePopupButtonEdit.addEventListener('click', () => {
   closePopup(popupEdit);
 });
 
+// Функция установки Неактивной кнопки с изменением её стиля в попапе Add
+const toDisableButtonAdd = () => {
+  const buttonAdd = document.querySelector('#buttonAdd');
+  buttonAdd.classList.add(obj.inactiveButtonClass);
+  buttonAdd.setAttribute('disabled', true);
+}
 // Навесить слушатель на кнопку открытия попапа Add
 showPopupButtonAdd.addEventListener('click', () => {
+  // Очистить поля ввода формы с помощью обработчика
   openPopupAddHandler(popupAdd);
-  // Найти кнопку "Сохранить"
-  const buttonElement = document.querySelector(obj.submitButtonSelector);
-  buttonElement.setAttribute('disabled', true);
+  // Отключить кнопку "Сохранить" и сменить стиль на неактивный
+  toDisableButtonAdd();
 });
 // Навесить слушатель на кнопку закрытия попапа Add
 closePopupButtonAdd.addEventListener('click', () => {
@@ -168,7 +185,7 @@ closePopupButtonAdd.addEventListener('click', () => {
 });
 
 // Функция обработки ввода данных в форме Edit
-function submitFormEditHandler (evt) {
+function submitFormEditHandler(evt) {
   evt.preventDefault();
   nameProfile.textContent = nameInput.value;
   jobProfile.textContent = jobInput.value;
@@ -182,7 +199,7 @@ function submitFormAddHandler(evt) {
   evt.preventDefault();
   const valueTitleInput = titleInput.value;
   const scrImageInput = imageInput.value;
-  const newCard = createCardDomNode({name: valueTitleInput, link: scrImageInput})
+  const newCard = createCardDomNode({ name: valueTitleInput, link: scrImageInput })
   cardContainer.prepend(newCard);
   closePopup(popupAdd);
 }
@@ -197,7 +214,7 @@ const popupList = Array.from(document.querySelectorAll('.popup'));
 popupList.forEach(popup => {
   // Закрыть конкретный попап при нажатии ЛКМ на оверлей попапа
   popup.onclick = (evt) => {
-    if(evt.target.classList.contains('popup')) {
+    if (evt.target.classList.contains('popup')) {
       closePopup(popup)
     }
   }
@@ -209,14 +226,10 @@ const buttonEscape = 27;
 // Функция закрытия всех открытых попапов при нажатии на кнпоку "Escape"
 function closePopupByEsc(evt) {
   popupList.forEach(popupElement => {
-    if (evt.keyCode === buttonEscape && popupElement.classList.contains('popup_opened'))
-    {
+    if (evt.keyCode === buttonEscape && popupElement.classList.contains('popup_opened')) {
       closePopup(popupElement);
     }
-})
+  })
 }
   // // В данной реализации при нажатии на кнопку "Escape" закрываются все открытые попапы на странице, даже если их будет открыто несколько.
     // Я пока что не совсем понимаю, как здесь применить метод bind. Да и изучение работы с объектами подразумевается в последующих спринтах программы обучения.
-
-
-
