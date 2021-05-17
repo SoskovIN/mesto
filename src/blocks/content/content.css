@@ -1,0 +1,18 @@
+.content {
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+@media (max-width: 918px) {
+  .content {
+    max-width: 730px;
+  }
+}
+
+@media (max-width: 627px) {
+  .content {
+    max-width: calc(100% - 2*19px);
+  }
+}
+
+

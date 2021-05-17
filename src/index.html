@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mesto</title>
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a target="_self" href="#" class="header__logo-link">
+        <img src="<%=require('./images/header-logo.svg')%>"   alt="Логотип Mesto" class="header__logo">
+      </a>
+    </header>
+
+    <main class="content">
+
+      <section class="profile">
+        <img src="<%=require('./images/profile-avatar.png')%>" alt="Фото профиля пользователя" class="profile__avatar">
+        <div class="profile__info">
+          <h1 class="profile__full-name">Жак-Ив Кусто</h1>
+          <button type="button" aria-label="Редактировать профиль" class="profile__edit-button profile__hover-button"></button>
+          <p class="profile__profession">Исследователь океана</p>
+        </div>
+        <button type="button" aria-label="Добавить изображение" class="profile__add-button profile__hover-button">
+        </button>
+
+
+      </section>
+
+      <section class="elements">
+        <!-- Вставить шаблоны карточек -->
+      </section>
+
+    </main>
+
+    <div class="bubble"></div>
+
+    <footer class="footer">
+      <p translate="no" class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </footer>
+
+    <div class="popup popup-edit">
+      <div  class="popup__content">
+        <button type="button" aria-label="Закрыть модальное окно" class="popup__close popup__close-edit">
+        </button>
+        <form name="user-data" class="form form-edit" novalidate>
+          <h2 class="form__title">Редактировать профиль</h2>
+          <label class="form__field">
+            <input name="fullname" id="fullname" type="text" value=" " class="form__input form__input_type_name" required minlength="2" maxlength="40">
+            <span id="fullname-error" class="form__error"></span>
+          </label>
+          <label class="form__field">
+            <input name="job" id="job" type="text" value=" " class="form__input form__input_type_job" required minlength="2" maxlength="200">
+            <span id="job-error" class="form__error"></span>
+          </label>
+          <button type="submit" id="buttonEdit" aria-label="Сохранить данные пользователя" class="form__button-save">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup-add">
+      <div  class="popup__content">
+        <button type="button" aria-label="Закрыть модальное окно" class="popup__close popup__close-add">
+        </button>
+        <form name="add-card" class="form form-add" novalidate>
+          <h2 class="form__title">Новое место</h2>
+          <label class="form__field">
+            <input name="name" id="title" type="text"  placeholder="Название" class="form__input form__input_type_title" required minlength="2" maxlength="30">
+            <span id="title-error" class="form__error"></span>
+          </label>
+          <label class="form__field">
+            <input name="link" id="link" type="url"  placeholder="Ссылка на картинку" class="form__input form__input_type_link" required>
+            <span id="link-error" class="form__error"></span>
+          </label>
+          <button type="submit" id="buttonAdd" aria-label="Сохранить добавленную карточку" class="form__button-save" disabled>Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup-image">
+      <div class="popup__image-container">
+        <button type="button" aria-label="Закрыть модальное окно" class="popup__close popup__close-img"></button>
+        <img src="#" alt="#" class="popup__image">
+        <h2 class="popup__image-title"></h2>
+      </div>
+    </div>
+
+  </div>
+
+  <template class="template">
+    <article class="element">
+      <img class="element__image" alt="фотография природы">
+      <h2 class="element__title"></h2>
+      <button type="button" aria-label="Лайк" class="element__like"></button>
+      <button type="button" aria-label="Удалить карточку" class="element__delete"></button>
+    </article>
+  </template>
+
+
+</body>
+</html>

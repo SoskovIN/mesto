@@ -1,0 +1,26 @@
+.page {
+  flex-direction:column;
+  padding-top: 45px;
+  padding-bottom: 60px;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  background-color: black;
+  /* Убрать скролл при открытом попапе */
+  /* width: 100vw;
+  height: 100vh;
+  overflow: auto; */
+}
+
+@media (max-width: 424px) {
+  .page {
+    padding-top: 28px;
+    padding-bottom: 36px;
+  }
+}
+
