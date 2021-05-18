@@ -1,5 +1,4 @@
 // Глобальыне переменные:
-
   // Место, куда будут добавляются карточки
   export const cardContainer = document.querySelector('.elements');
   // Элемент, который будет клонироваться
@@ -25,3 +24,14 @@
   export const nameProfile = document.querySelector('.profile__full-name');
   // Род деятельности пользователя, отображаемый на главное странице
   export const jobProfile = document.querySelector('.profile__profession');
+
+
+  // Конфиг для валидации форм
+  export const validationConfig = {
+    formSelector: '.form',
+    inputSelector: '.form__input',
+    submitButtonSelector: '.form__button-save',
+    inactiveButtonClass: 'form__button-save_invalid',
+    inputErrorClass: 'form__input_type_error',
+    errorClass: 'form__error_visible'
+  };

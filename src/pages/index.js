@@ -2,9 +2,8 @@ import {Card} from "../components/Card.js";
 import {initialCards} from "../utils/initial-cards.js";
 import {cardContainer, templateElement, popupEdit, popupAdd,
 popupImage, showPopupButtonEdit, showPopupButtonAdd, nameInput,
-jobInput, nameProfile, jobProfile} from '../utils/constants.js';
+jobInput, nameProfile, jobProfile, validationConfig} from '../utils/constants.js';
 import {FormValidator} from '../components/FormValidator.js';
-import {validationConfig} from '../components/FormValidator.js';
 import {PopupWithImage} from '../components/PopupWithImage.js';
 import {PopupWithForm} from '../components/PopupWithForm.js';
 import {UserInfo} from '../components/UserInfo.js';
@@ -21,12 +20,16 @@ const popupCardImage = new PopupWithImage(popupImage);
 const popupFormEdit = new PopupWithForm(popupEdit, editFormSubmitHandler);
 const popupFormAddCard = new PopupWithForm(popupAdd, addCardSubmitHandler);
 
+// Функция создания карточки
+function creatCard(data) {
+    const card = new Card(data, templateElement, { handleCardClick() { popupCardImage.open(data)}});
+    const cardElement = card.generateCard();
+    return cardElement;
+}
 
 // Создать начальные карточки "из коробки"
 const cardsList = new Section( { items: initialCards, renderer: (data) => {
-  const card = new Card(data, templateElement, { handleCardClick() { popupCardImage.open(data)}});
-  const cardElement = card.generateCard();
-  cardsList.addItem(cardElement);
+  cardsList.addItem(creatCard(data));
 }}, cardContainer);
 
 // Функция отправки формы Edit,
@@ -48,10 +51,7 @@ showPopupButtonEdit.addEventListener("click", () => {
 // Функция отправки формы Add,
 // добавляет на страницу новую карточку и закрывает попап
 function addCardSubmitHandler(data) {
-  const card = new Card(data, templateElement, { handleCardClick() {popupCardImage.open(data)}});
-  const cardElement = card.generateCard();
-
-  cardContainer.prepend(cardElement);
+  cardContainer.prepend(creatCard(data));
   popupFormAddCard.close();
 }
 

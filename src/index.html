@@ -49,11 +49,11 @@
         <form name="user-data" class="form form-edit" novalidate>
           <h2 class="form__title">Редактировать профиль</h2>
           <label class="form__field">
-            <input name="fullname" id="fullname" type="text" value=" " class="form__input form__input_type_name" required minlength="2" maxlength="40">
+            <input name="fullname" id="fullname" type="text" placeholder="Имя" value=" " class="form__input form__input_type_name" required minlength="2" maxlength="40">
             <span id="fullname-error" class="form__error"></span>
           </label>
           <label class="form__field">
-            <input name="job" id="job" type="text" value=" " class="form__input form__input_type_job" required minlength="2" maxlength="200">
+            <input name="job" id="job" type="text" placeholder="Вид деятельности" value=" " class="form__input form__input_type_job" required minlength="2" maxlength="200">
             <span id="job-error" class="form__error"></span>
           </label>
           <button type="submit" id="buttonEdit" aria-label="Сохранить данные пользователя" class="form__button-save">Сохранить</button>
